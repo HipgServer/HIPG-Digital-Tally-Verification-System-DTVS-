@@ -789,6 +789,26 @@
   ],
   "auditLogs": [
     {
+      "id": "log-1794251104652-86nvw",
+      "timestamp": "2026-11-09T19:05:04.652Z",
+      "userId": "user-gat-01",
+      "userName": "Gate Security Viewer",
+      "userRole": "Security Viewer",
+      "action": "USER_LOGIN",
+      "details": "User Gate Security Viewer (Security Viewer) logged into DTVS terminal",
+      "deviceId": "HIPG-AUTH-SYS"
+    },
+    {
+      "id": "log-1794251094958-ee7qo",
+      "timestamp": "2026-11-09T19:04:54.958Z",
+      "userId": "user-sup-01",
+      "userName": "Port Supervisor",
+      "userRole": "Supervisor",
+      "action": "USER_LOGIN",
+      "details": "User Port Supervisor (Supervisor) logged into DTVS terminal",
+      "deviceId": "HIPG-AUTH-SYS"
+    },
+    {
       "id": "log-1794250936616-pzlii",
       "timestamp": "2026-11-09T19:02:16.616Z",
       "userId": "user-adm-01",
