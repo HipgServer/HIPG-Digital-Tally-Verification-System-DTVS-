@@ -40,3 +40,4 @@ You can log in directly or use the one-click quick role switcher in the UI:
 - **Security Viewer**: `viewer01` / `pass123` (Badge: HIPG-GAT-201)
 - **Delivery Driver**: `driver01` / `pass123` (Badge: LOG-DRV-882)
 
+## MONGODB_URI=mongodb+srv://chathuzpmc_db_user: vtuRmx4ls0DQNqKE@cluster0 iufsjec.mongodb.net/

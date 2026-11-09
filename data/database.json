@@ -789,6 +789,16 @@
   ],
   "auditLogs": [
     {
+      "id": "log-1794250936616-pzlii",
+      "timestamp": "2026-11-09T19:02:16.616Z",
+      "userId": "user-adm-01",
+      "userName": "System Administrator",
+      "userRole": "Administrator",
+      "action": "USER_LOGIN",
+      "details": "User System Administrator (Administrator) logged into DTVS terminal",
+      "deviceId": "HIPG-AUTH-SYS"
+    },
+    {
       "id": "log-1794248421423-2clti",
       "timestamp": "2026-11-09T18:20:21.423Z",
       "userId": "test-user",
