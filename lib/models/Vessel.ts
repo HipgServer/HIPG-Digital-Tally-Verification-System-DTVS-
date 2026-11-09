@@ -1,6 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IVesselDocument extends Document {
+  customId?: string;
   name: string;
   imoNumber: string;
   voyageNumber: string;
@@ -23,6 +24,7 @@ export interface IVesselDocument extends Document {
 
 const VesselSchema = new Schema<IVesselDocument>(
   {
+    customId: { type: String, index: true },
     name: { type: String, required: true, index: true },
     imoNumber: { type: String, required: true },
     voyageNumber: { type: String, required: true, index: true },

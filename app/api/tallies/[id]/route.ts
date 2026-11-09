@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getTallyById, getTallyByReferenceNo, saveTally } from '@/lib/storage';
+import { getTallyById, getTallyByReferenceNo, saveTally, deleteTally } from '@/lib/storage';
 
 export async function GET(
   req: NextRequest,
@@ -51,6 +51,26 @@ export async function PUT(
 
     const updated = await saveTally({ ...existing, ...body, id }, user);
     return NextResponse.json({ success: true, tally: updated });
+  } catch (error: any) {
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
+}
+
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const { id } = params;
+    const userCookie = req.cookies.get('hipg_user')?.value;
+    const user = userCookie ? JSON.parse(userCookie) : undefined;
+
+    const result = await deleteTally(id, user);
+    if (!result.success) {
+      return NextResponse.json({ success: false, error: result.error }, { status: 400 });
+    }
+
+    return NextResponse.json({ success: true, message: 'Record deleted successfully' });
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }

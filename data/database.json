@@ -69,6 +69,46 @@
   ],
   "vessels": [
     {
+      "id": "vessel-1794248420816",
+      "name": "Auto Advance Leader",
+      "imoNumber": "9988112",
+      "voyageNumber": "AAL-001",
+      "docNumber": "55410",
+      "shippingAgent": "NYK Line",
+      "berthLocation": "Berth 08 (RoRo)",
+      "arrivalDate": "2026-11-09T18:20:20.816Z",
+      "operationStartDate": "2026-11-09T18:20:20.816Z",
+      "status": "Arrived",
+      "totalManifestedVehicles": 350,
+      "dischargedCount": 1,
+      "approvedCount": 1,
+      "pendingCount": 0,
+      "rejectedCount": 0,
+      "notes": "",
+      "createdAt": "2026-11-09T18:20:21.003Z",
+      "updatedAt": "2026-11-09T18:20:21.259Z"
+    },
+    {
+      "id": "vessel-1794248320074",
+      "name": "Auto Advance Leader",
+      "imoNumber": "9988112",
+      "voyageNumber": "AAL-001",
+      "docNumber": "55410",
+      "shippingAgent": "NYK Line",
+      "berthLocation": "Berth 08 (RoRo)",
+      "arrivalDate": "2026-11-09T18:18:40.074Z",
+      "operationStartDate": "2026-11-09T18:18:40.074Z",
+      "status": "Scheduled",
+      "totalManifestedVehicles": 350,
+      "dischargedCount": 1,
+      "approvedCount": 1,
+      "pendingCount": 0,
+      "rejectedCount": 0,
+      "notes": "",
+      "createdAt": "2026-11-09T18:18:40.074Z",
+      "updatedAt": "2026-11-09T18:18:40.479Z"
+    },
+    {
       "id": "vessel-gp-015",
       "name": "Grand Pioneer",
       "imoNumber": "9654123",
@@ -81,12 +121,12 @@
       "status": "In Progress",
       "totalManifestedVehicles": 245,
       "dischargedCount": 5,
-      "approvedCount": 2,
-      "pendingCount": 2,
+      "approvedCount": 1,
+      "pendingCount": 3,
       "rejectedCount": 1,
       "notes": "RoRo auto carrier discharge in progress at Berth 07",
       "createdAt": "2026-11-08T06:30:00Z",
-      "updatedAt": "2026-11-09T16:01:06.078Z"
+      "updatedAt": "2026-11-09T18:20:21.333Z"
     },
     {
       "id": "vessel-ms-088",
@@ -132,47 +172,59 @@
   ],
   "tallies": [
     {
-      "id": "tally-1794240058732",
+      "id": "tally-1794248421332",
       "referenceNo": "DTVS-2026-000788",
       "vesselId": "vessel-gp-015",
       "vesselName": "Grand Pioneer",
       "voyageNo": "GP-015",
       "docNo": "37538",
-      "vehicleNo": "TEST-9988",
-      "chassisNo": "TESTCHASSIS998877",
-      "tagNo": "TAG-18930",
+      "vehicleNo": "SYNC-OFFLINE-01",
+      "chassisNo": "VINOFFLINE88776655",
+      "tagNo": "TAG-46261",
       "agentName": "MOL",
       "yardLocation": "Berth 07 (RoRo)",
-      "brandModel": "Nissan Patrol V8",
+      "brandModel": "Toyota Land Cruiser Prado",
       "cargoType": "Vehicle (CBU)",
-      "checklist": [
-        {
-          "status": "OK",
-          "name": "Monogram",
-          "id": "monogram"
-        }
-      ],
+      "checklist": [],
       "hasDamage": false,
       "damages": [],
       "photos": [],
-      "status": "Approved",
-      "isLocked": true,
+      "status": "Pending Approval",
+      "isLocked": false,
       "createdBy": {
         "id": "user-sec-01",
         "name": "Security01",
         "role": "Security Officer",
         "badgeNo": "HIPG-SEC-104"
       },
-      "deviceId": "HIPG-TERMINAL-01",
-      "createdAt": "2026-11-09T16:00:58.732Z",
-      "submittedAt": "2026-11-09T16:00:58.732Z",
+      "deviceId": "HIPG-OFFLINE-TEST-09",
+      "createdAt": "2026-11-09T18:20:21.332Z",
+      "submittedAt": "2026-11-09T18:20:21.332Z",
       "qrCodeDataUrl": "data:image/png;base64,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",
       "syncStatus": "synced",
       "approvalDetails": {
         "approvedBy": "user-sup-01",
         "supervisorName": "Supervisor01",
-        "approvedAt": "2026-11-09T16:01:06.077Z",
-        "comments": "Physical inspection verified by Terminal Supervisor."
+        "approvedAt": "2026-11-09T18:20:21.258Z",
+        "comments": "Physical condition verified and certified by Port Supervisor."
+      },
+      "correctionDetails": {
+        "requestedBy": "user-sup-01",
+        "supervisorName": "Supervisor01",
+        "requestedAt": "2026-11-09T18:20:21.209Z",
+        "comments": "Please attach close up photo of rear bumper scratch.",
+        "history": [
+          {
+            "requestedAt": "2026-11-09T18:18:40.426Z",
+            "supervisorName": "Supervisor01",
+            "comments": "Please attach close up photo of rear bumper scratch."
+          },
+          {
+            "requestedAt": "2026-11-09T18:20:21.209Z",
+            "supervisorName": "Supervisor01",
+            "comments": "Please attach close up photo of rear bumper scratch."
+          }
+        ]
       }
     },
     {
@@ -736,6 +788,214 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-1794248421423-2clti",
+      "timestamp": "2026-11-09T18:20:21.423Z",
+      "userId": "test-user",
+      "userName": "Quality Assessor",
+      "userRole": "Administrator",
+      "action": "QR_VERIFIED",
+      "recordId": "tally-1794248421080",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Automated test suite gate scan verification",
+      "deviceId": "TEST-HARNESS-NODE"
+    },
+    {
+      "id": "log-1794248421376-ypcuv",
+      "timestamp": "2026-11-09T18:20:21.376Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "OFFLINE_SYNC_COMPLETED",
+      "recordId": "tally-1794248421332",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Synchronized offline record DTVS-2026-000788 for vehicle SYNC-OFFLINE-01 from device HIPG-OFFLINE-TEST-09",
+      "deviceId": "HIPG-OFFLINE-TEST-09"
+    },
+    {
+      "id": "log-1794248421334-nmfhx",
+      "timestamp": "2026-11-09T18:20:21.334Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-1794248421332",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Tally submitted for vehicle SYNC-OFFLINE-01 (VINOFFLINE88776655) on vessel Grand Pioneer",
+      "deviceId": "HIPG-OFFLINE-TEST-09"
+    },
+    {
+      "id": "log-1794248421260-yljh4",
+      "timestamp": "2026-11-09T18:20:21.260Z",
+      "userId": "user-sup-01",
+      "userName": "Supervisor01",
+      "userRole": "Supervisor",
+      "action": "TALLY_APPROVED",
+      "recordId": "tally-1794248421080",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Approved and locked vehicle tally for CRUD-TEST-88 (DOC: 55410)",
+      "deviceId": "SUPERVISOR-CONSOLE"
+    },
+    {
+      "id": "log-1794248421211-dupki",
+      "timestamp": "2026-11-09T18:20:21.211Z",
+      "userId": "user-sup-01",
+      "userName": "Supervisor01",
+      "userRole": "Supervisor",
+      "action": "TALLY_CHANGES_REQUESTED",
+      "recordId": "tally-1794248421080",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Requested changes for tally DTVS-2026-000788 (CRUD-TEST-88): Please attach close up photo of rear bumper scratch.",
+      "deviceId": "SUPERVISOR-CONSOLE"
+    },
+    {
+      "id": "log-1794248421159-w8bvp",
+      "timestamp": "2026-11-09T18:20:21.159Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-1794248421080",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Tally submitted for vehicle CRUD-TEST-88 (VIN8899AAL001122) on vessel Auto Advance Leader",
+      "deviceId": "HIPG-TERMINAL-01"
+    },
+    {
+      "id": "log-1794248421083-8deid",
+      "timestamp": "2026-11-09T18:20:21.083Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-1794248421080",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Tally submitted for vehicle CRUD-TEST-88 (VIN8899AAL001122) on vessel Auto Advance Leader",
+      "deviceId": "HIPG-TERMINAL-01"
+    },
+    {
+      "id": "log-1794248420870-wp8bv",
+      "timestamp": "2026-11-09T18:20:20.870Z",
+      "userId": "admin",
+      "userName": "Administrator",
+      "userRole": "Administrator",
+      "action": "VESSEL_CREATED",
+      "details": "Vessel updated/created: Auto Advance Leader (Voyage: AAL-001, DOC: 55410)",
+      "deviceId": "HIPG-PORT-ADMIN"
+    },
+    {
+      "id": "log-1794248420568-x31g7",
+      "timestamp": "2026-11-09T18:20:20.568Z",
+      "userId": "user-sec-01",
+      "userName": "Operations User",
+      "userRole": "Security Officer",
+      "action": "USER_LOGIN",
+      "details": "User Operations User (Security Officer) logged into DTVS terminal",
+      "deviceId": "HIPG-AUTH-SYS"
+    },
+    {
+      "id": "log-1794248320644-h3je8",
+      "timestamp": "2026-11-09T18:18:40.644Z",
+      "userId": "test-user",
+      "userName": "Quality Assessor",
+      "userRole": "Administrator",
+      "action": "QR_VERIFIED",
+      "recordId": "tally-1794248320297",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Automated test suite gate scan verification",
+      "deviceId": "TEST-HARNESS-NODE"
+    },
+    {
+      "id": "log-1794248320592-5cqnm",
+      "timestamp": "2026-11-09T18:18:40.592Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "OFFLINE_SYNC_COMPLETED",
+      "recordId": "tally-1794248320545",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Synchronized offline record DTVS-2026-000788 for vehicle SYNC-OFFLINE-01 from device HIPG-OFFLINE-TEST-09",
+      "deviceId": "HIPG-OFFLINE-TEST-09"
+    },
+    {
+      "id": "log-1794248320548-6l5on",
+      "timestamp": "2026-11-09T18:18:40.548Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-1794248320545",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Tally submitted for vehicle SYNC-OFFLINE-01 (VINOFFLINE88776655) on vessel Grand Pioneer",
+      "deviceId": "HIPG-OFFLINE-TEST-09"
+    },
+    {
+      "id": "log-1794248320479-mw5km",
+      "timestamp": "2026-11-09T18:18:40.479Z",
+      "userId": "user-sup-01",
+      "userName": "Supervisor01",
+      "userRole": "Supervisor",
+      "action": "TALLY_APPROVED",
+      "recordId": "tally-1794248320297",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Approved and locked vehicle tally for CRUD-TEST-88 (DOC: 55410)",
+      "deviceId": "SUPERVISOR-CONSOLE"
+    },
+    {
+      "id": "log-1794248320428-njlog",
+      "timestamp": "2026-11-09T18:18:40.428Z",
+      "userId": "user-sup-01",
+      "userName": "Supervisor01",
+      "userRole": "Supervisor",
+      "action": "TALLY_CHANGES_REQUESTED",
+      "recordId": "tally-1794248320297",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Requested changes for tally DTVS-2026-000788 (CRUD-TEST-88): Please attach close up photo of rear bumper scratch.",
+      "deviceId": "SUPERVISOR-CONSOLE"
+    },
+    {
+      "id": "log-1794248320376-n6i3k",
+      "timestamp": "2026-11-09T18:18:40.376Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-1794248320297",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Tally submitted for vehicle CRUD-TEST-88 (VIN8899AAL001122) on vessel Auto Advance Leader",
+      "deviceId": "HIPG-TERMINAL-01"
+    },
+    {
+      "id": "log-1794248320299-gujt0",
+      "timestamp": "2026-11-09T18:18:40.299Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-1794248320297",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Tally submitted for vehicle CRUD-TEST-88 (VIN8899AAL001122) on vessel Auto Advance Leader",
+      "deviceId": "HIPG-TERMINAL-01"
+    },
+    {
+      "id": "log-1794248320124-enojy",
+      "timestamp": "2026-11-09T18:18:40.124Z",
+      "userId": "admin",
+      "userName": "Administrator",
+      "userRole": "Administrator",
+      "action": "VESSEL_CREATED",
+      "details": "Vessel updated/created: Auto Advance Leader (Voyage: AAL-001, DOC: 55410)",
+      "deviceId": "HIPG-PORT-ADMIN"
+    },
+    {
+      "id": "log-1794248319562-wf8ik",
+      "timestamp": "2026-11-09T18:18:39.562Z",
+      "userId": "user-sec-01",
+      "userName": "Operations User",
+      "userRole": "Security Officer",
+      "action": "USER_LOGIN",
+      "details": "User Operations User (Security Officer) logged into DTVS terminal",
+      "deviceId": "HIPG-AUTH-SYS"
+    },
     {
       "id": "log-1794247197390-xyqac",
       "timestamp": "2026-11-09T17:59:57.390Z",

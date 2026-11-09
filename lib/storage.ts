@@ -132,7 +132,7 @@ export async function getVessels(): Promise<Vessel[]> {
       if (docs && docs.length > 0) {
         return docs.map((doc: any) => ({
           ...doc,
-          id: doc._id.toString(),
+          id: doc.customId || doc.id || doc._id.toString(),
         }));
       }
     } catch (e) {
@@ -145,7 +145,17 @@ export async function getVessels(): Promise<Vessel[]> {
 
 export async function getVesselById(id: string): Promise<Vessel | null> {
   const vessels = await getVessels();
-  return vessels.find((v) => v.id === id) || null;
+  return (
+    vessels.find(
+      (v) =>
+        v.id === id ||
+        (v as any).customId === id ||
+        (v as any)._id === id ||
+        (v as any)._id?.toString() === id ||
+        v.imoNumber === id ||
+        v.name.toLowerCase() === id.toLowerCase()
+    ) || null
+  );
 }
 
 export async function saveVessel(vessel: Partial<Vessel>): Promise<Vessel> {
@@ -184,7 +194,15 @@ export async function saveVessel(vessel: Partial<Vessel>): Promise<Vessel> {
   const { isConnected } = await connectToDatabase();
   if (isConnected) {
     try {
-      await VesselModel.findOneAndUpdate({ imoNumber: newVessel.imoNumber, voyageNumber: newVessel.voyageNumber }, newVessel, { upsert: true, new: true });
+      const mongoPayload = {
+        ...newVessel,
+        customId: newVessel.id,
+      };
+      await VesselModel.findOneAndUpdate(
+        { $or: [{ customId: newVessel.id }, { imoNumber: newVessel.imoNumber, voyageNumber: newVessel.voyageNumber }] },
+        mongoPayload,
+        { upsert: true, new: true }
+      );
     } catch (e) {
       console.warn('Mongo vessel sync warning:', e);
     }
@@ -481,6 +499,97 @@ export async function getAuditLogs(filter?: { recordId?: string; referenceNo?: s
     logs = logs.filter((l) => l.userId === filter.userId);
   }
   return logs;
+}
+
+export async function deleteTally(id: string, user?: { id: string; name: string; role: string }): Promise<{ success: boolean; error?: string }> {
+  const data = loadDataFromFile();
+  const index = data.tallies.findIndex((t) => t.id === id || t.referenceNo === id);
+  if (index === -1) {
+    return { success: false, error: 'Tally record not found' };
+  }
+
+  const tally = data.tallies[index];
+  if (tally.isLocked && tally.status === 'Approved') {
+    return { success: false, error: 'Cannot delete an approved and certified tally record' };
+  }
+
+  data.tallies.splice(index, 1);
+  saveDataToFile(data);
+  updateVesselCounters(tally.vesselId);
+
+  // Remove from MongoDB if connected
+  const { isConnected } = await connectToDatabase();
+  if (isConnected) {
+    try {
+      await VehicleTallyModel.deleteOne({ $or: [{ _id: id }, { referenceNo: tally.referenceNo }] });
+    } catch (e) {
+      // safe fallback
+    }
+  }
+
+  await addAuditLog({
+    userId: user?.id || 'admin',
+    userName: user?.name || 'Administrator',
+    userRole: user?.role || 'Administrator',
+    action: 'TALLY_UPDATED',
+    recordId: tally.id,
+    referenceNo: tally.referenceNo,
+    details: `Deleted draft/pending tally record for ${tally.vehicleNo} (${tally.referenceNo})`,
+    deviceId: 'PORT-ADMIN-TERM',
+  });
+
+  return { success: true };
+}
+
+export async function deleteVessel(id: string): Promise<boolean> {
+  const data = loadDataFromFile();
+  const index = data.vessels.findIndex((v) => v.id === id);
+  if (index === -1) return false;
+  const vessel = data.vessels[index];
+  data.vessels.splice(index, 1);
+  saveDataToFile(data);
+
+  const { isConnected } = await connectToDatabase();
+  if (isConnected) {
+    try {
+      await VesselModel.deleteOne({ $or: [{ _id: id }, { imoNumber: vessel.imoNumber }] });
+    } catch (e) {}
+  }
+  return true;
+}
+
+export async function getDatabaseStatus() {
+  const { isConnected, mongooseInstance } = await connectToDatabase();
+  const data = loadDataFromFile();
+
+  const mongoState = mongooseInstance
+    ? ['disconnected', 'connected', 'connecting', 'disconnecting'][mongooseInstance.connection.readyState]
+    : 'offline';
+
+  return {
+    database: {
+      engine: isConnected ? 'MongoDB (Mongoose)' : 'Resilient File Store (JSON)',
+      mongoConnected: isConnected,
+      mongoState,
+      fallbackStorageActive: true,
+      storageFile: DATA_FILE,
+      mongoUriConfigured: !!process.env.MONGODB_URI,
+    },
+    counts: {
+      users: data.users.length,
+      vessels: data.vessels.length,
+      tallies: data.tallies.length,
+      approvedTallies: data.tallies.filter((t) => t.status === 'Approved').length,
+      pendingTallies: data.tallies.filter((t) => t.status === 'Pending Approval').length,
+      rejectedTallies: data.tallies.filter((t) => t.status === 'Rejected').length,
+      auditLogs: data.auditLogs.length,
+    },
+    sampleDataLoaded: {
+      vesselsLoaded: data.vessels.some((v) => v.name.includes('Grand Pioneer')),
+      talliesLoaded: data.tallies.some((t) => t.referenceNo === 'DTVS-2026-000784'),
+      usersLoaded: data.users.some((u) => u.username === 'security01'),
+    },
+  };
 }
 
 export async function getDashboardStats(): Promise<DashboardStats> {
