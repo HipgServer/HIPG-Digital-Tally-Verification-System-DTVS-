@@ -1,0 +1,849 @@
+{
+  "users": [
+    {
+      "id": "user-sec-01",
+      "username": "security01",
+      "name": "Operations User",
+      "email": "security01@hipg.lk",
+      "role": "Security Officer",
+      "badgeNumber": "HIPG-SEC-104",
+      "department": "Port Security & Operations",
+      "phone": "+94 47 222 8104",
+      "isActive": true
+    },
+    {
+      "id": "user-sup-01",
+      "username": "supervisor01",
+      "name": "Port Supervisor",
+      "email": "supervisor01@hipg.lk",
+      "role": "Supervisor",
+      "badgeNumber": "HIPG-SUP-012",
+      "department": "RoRo Operations Management",
+      "phone": "+94 47 222 8012",
+      "isActive": true
+    },
+    {
+      "id": "user-adm-01",
+      "username": "admin",
+      "name": "System Administrator",
+      "email": "admin@hipg.lk",
+      "role": "Administrator",
+      "badgeNumber": "HIPG-ADM-001",
+      "department": "IT & Digital Transformation",
+      "phone": "+94 47 222 8001",
+      "isActive": true
+    },
+    {
+      "id": "user-csd-01",
+      "username": "csd01",
+      "name": "CSD Verifier",
+      "email": "csd@hipg.lk",
+      "role": "CSD",
+      "badgeNumber": "HIPG-CSD-005",
+      "department": "Customer Service Dept",
+      "phone": "+94 47 222 8055",
+      "isActive": true
+    },
+    {
+      "id": "user-gat-01",
+      "username": "viewer01",
+      "name": "Gate Security Viewer",
+      "email": "gate@hipg.lk",
+      "role": "Security Viewer",
+      "badgeNumber": "HIPG-GAT-201",
+      "department": "Gate Control Security",
+      "phone": "+94 47 222 8201",
+      "isActive": true
+    },
+    {
+      "id": "user-drv-01",
+      "username": "driver01",
+      "name": "Delivery Driver",
+      "email": "driver01@logistics.lk",
+      "role": "Delivery Driver",
+      "badgeNumber": "LOG-DRV-882",
+      "department": "Inter-terminal Logistics",
+      "phone": "+94 77 123 4567",
+      "isActive": true
+    }
+  ],
+  "vessels": [
+    {
+      "id": "vessel-gp-015",
+      "name": "Grand Pioneer",
+      "imoNumber": "9654123",
+      "voyageNumber": "GP-015",
+      "docNumber": "37538",
+      "shippingAgent": "MOL",
+      "berthLocation": "Berth 07 (RoRo)",
+      "arrivalDate": "2026-11-08T06:30:00Z",
+      "operationStartDate": "2026-11-09T08:00:00Z",
+      "status": "In Progress",
+      "totalManifestedVehicles": 245,
+      "dischargedCount": 5,
+      "approvedCount": 2,
+      "pendingCount": 2,
+      "rejectedCount": 1,
+      "notes": "RoRo auto carrier discharge in progress at Berth 07",
+      "createdAt": "2026-11-08T06:30:00Z",
+      "updatedAt": "2026-11-09T16:01:06.078Z"
+    },
+    {
+      "id": "vessel-ms-088",
+      "name": "Morning Sapphire",
+      "imoNumber": "9427811",
+      "voyageNumber": "MS-088",
+      "docNumber": "37542",
+      "shippingAgent": "NYK Line",
+      "berthLocation": "Berth 08 (RoRo)",
+      "arrivalDate": "2026-11-09T18:00:00Z",
+      "operationStartDate": "2026-11-10T06:00:00Z",
+      "status": "Scheduled",
+      "totalManifestedVehicles": 480,
+      "dischargedCount": 0,
+      "approvedCount": 0,
+      "pendingCount": 0,
+      "rejectedCount": 0,
+      "notes": "En route to Hambantota Port from Singapore",
+      "createdAt": "2026-11-09T10:00:00Z",
+      "updatedAt": "2026-11-09T10:00:00Z"
+    },
+    {
+      "id": "vessel-aa-102",
+      "name": "Asian Aurora",
+      "imoNumber": "9389201",
+      "voyageNumber": "AA-102",
+      "docNumber": "37510",
+      "shippingAgent": "Höegh Autoliners",
+      "berthLocation": "Berth 07 (RoRo)",
+      "arrivalDate": "2026-11-06T12:00:00Z",
+      "operationStartDate": "2026-11-06T14:00:00Z",
+      "operationEndDate": "2026-11-08T04:00:00Z",
+      "status": "Completed",
+      "totalManifestedVehicles": 620,
+      "dischargedCount": 620,
+      "approvedCount": 618,
+      "pendingCount": 0,
+      "rejectedCount": 2,
+      "notes": "Discharge completed, vessel departed for Jebel Ali",
+      "createdAt": "2026-11-06T12:00:00Z",
+      "updatedAt": "2026-11-08T05:00:00Z"
+    }
+  ],
+  "tallies": [
+    {
+      "id": "tally-1794240058732",
+      "referenceNo": "DTVS-2026-000788",
+      "vesselId": "vessel-gp-015",
+      "vesselName": "Grand Pioneer",
+      "voyageNo": "GP-015",
+      "docNo": "37538",
+      "vehicleNo": "TEST-9988",
+      "chassisNo": "TESTCHASSIS998877",
+      "tagNo": "TAG-18930",
+      "agentName": "MOL",
+      "yardLocation": "Berth 07 (RoRo)",
+      "brandModel": "Nissan Patrol V8",
+      "cargoType": "Vehicle (CBU)",
+      "checklist": [
+        {
+          "status": "OK",
+          "name": "Monogram",
+          "id": "monogram"
+        }
+      ],
+      "hasDamage": false,
+      "damages": [],
+      "photos": [],
+      "status": "Approved",
+      "isLocked": true,
+      "createdBy": {
+        "id": "user-sec-01",
+        "name": "Security01",
+        "role": "Security Officer",
+        "badgeNo": "HIPG-SEC-104"
+      },
+      "deviceId": "HIPG-TERMINAL-01",
+      "createdAt": "2026-11-09T16:00:58.732Z",
+      "submittedAt": "2026-11-09T16:00:58.732Z",
+      "qrCodeDataUrl": "data:image/png;base64,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",
+      "syncStatus": "synced",
+      "approvalDetails": {
+        "approvedBy": "user-sup-01",
+        "supervisorName": "Supervisor01",
+        "approvedAt": "2026-11-09T16:01:06.077Z",
+        "comments": "Physical inspection verified by Terminal Supervisor."
+      }
+    },
+    {
+      "id": "tally-000784",
+      "referenceNo": "DTVS-2026-000784",
+      "vesselId": "vessel-gp-015",
+      "vesselName": "Grand Pioneer",
+      "voyageNo": "GP-015",
+      "docNo": "37538",
+      "vehicleNo": "ABC-1234",
+      "chassisNo": "NNAAL5566577876543",
+      "tagNo": "TAG-88910",
+      "agentName": "MOL",
+      "yardLocation": "Berth 07 (RoRo)",
+      "brandModel": "Toyota Harrier (White Pearl)",
+      "cargoType": "Vehicle (CBU)",
+      "driverName": "K. Perera",
+      "driverLicense": "B1892837",
+      "checklist": [
+        {
+          "id": "monogram",
+          "name": "Monogram",
+          "label": "Monogram",
+          "status": "OK"
+        },
+        {
+          "id": "top_cap",
+          "name": "Top Cap",
+          "label": "Top Cap",
+          "status": "OK"
+        },
+        {
+          "id": "side_mirror_left",
+          "name": "Side Mirror (Left)",
+          "label": "Side Mirror (L)",
+          "status": "OK"
+        },
+        {
+          "id": "side_mirror_right",
+          "name": "Side Mirror (Right)",
+          "label": "Side Mirror (R)",
+          "status": "OK"
+        },
+        {
+          "id": "camera_front",
+          "name": "Camera Front",
+          "label": "Camera - Front",
+          "status": "Missing"
+        },
+        {
+          "id": "spare_tyre",
+          "name": "Spare Tyre",
+          "label": "Spare Tyre",
+          "status": "Missing"
+        },
+        {
+          "id": "wheel",
+          "name": "Wheel",
+          "label": "Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "jack",
+          "name": "Jack",
+          "label": "Jack",
+          "status": "OK"
+        },
+        {
+          "id": "battery",
+          "name": "Battery",
+          "label": "Battery",
+          "status": "OK"
+        },
+        {
+          "id": "ac_knob",
+          "name": "A/C Knob",
+          "label": "A/C Knob",
+          "status": "OK"
+        },
+        {
+          "id": "tool_kit",
+          "name": "Tool Kit",
+          "label": "Tool Kit",
+          "status": "OK"
+        },
+        {
+          "id": "alloy_wheel",
+          "name": "Alloy Wheel",
+          "label": "Alloy Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "hub_caps",
+          "name": "Hub Caps",
+          "label": "Hub Caps",
+          "status": "OK"
+        }
+      ],
+      "hasDamage": true,
+      "damages": [
+        {
+          "id": "dmg-1",
+          "category": "Scratched",
+          "location": "Front Right Bumper",
+          "severity": "Minor",
+          "remarks": "Surface paint scratch approx 12cm on lower bumper edge"
+        }
+      ],
+      "photos": [
+        {
+          "id": "p-1",
+          "type": "front",
+          "label": "Front View",
+          "dataUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:20:00Z"
+        },
+        {
+          "id": "p-2",
+          "type": "rear",
+          "label": "Rear View",
+          "dataUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:21:00Z"
+        },
+        {
+          "id": "p-3",
+          "type": "chassis",
+          "label": "Chassis No.",
+          "dataUrl": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:22:00Z"
+        },
+        {
+          "id": "p-4",
+          "type": "damage",
+          "label": "Damage (Front Right)",
+          "dataUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:23:00Z"
+        }
+      ],
+      "status": "Approved",
+      "isLocked": true,
+      "createdBy": {
+        "id": "user-sec-01",
+        "name": "Security01",
+        "role": "Security Officer",
+        "badgeNo": "HIPG-SEC-104"
+      },
+      "deviceId": "HIPG-TAB-RO-04",
+      "createdAt": "2026-11-09T14:15:00Z",
+      "submittedAt": "2026-11-09T14:25:00Z",
+      "approvalDetails": {
+        "approvedBy": "user-sup-01",
+        "supervisorName": "Supervisor01",
+        "approvedAt": "2026-11-09T14:36:00Z",
+        "comments": "Inspection verified and recorded with bumper scratch noted."
+      },
+      "syncStatus": "synced"
+    },
+    {
+      "id": "tally-000785",
+      "referenceNo": "DTVS-2026-000785",
+      "vesselId": "vessel-gp-015",
+      "vesselName": "Grand Pioneer",
+      "voyageNo": "GP-015",
+      "docNo": "37538",
+      "vehicleNo": "CAB-9921",
+      "chassisNo": "MR0HB5CD900456123",
+      "tagNo": "TAG-88911",
+      "agentName": "MOL",
+      "yardLocation": "Berth 07 (RoRo)",
+      "brandModel": "Honda Vezel e:HEV (Crystal Black)",
+      "cargoType": "Vehicle (CBU)",
+      "checklist": [
+        {
+          "id": "monogram",
+          "name": "Monogram",
+          "label": "Monogram",
+          "status": "OK"
+        },
+        {
+          "id": "top_cap",
+          "name": "Top Cap",
+          "label": "Top Cap",
+          "status": "OK"
+        },
+        {
+          "id": "side_mirror_left",
+          "name": "Side Mirror (Left)",
+          "label": "Side Mirror (L)",
+          "status": "OK"
+        },
+        {
+          "id": "side_mirror_right",
+          "name": "Side Mirror (Right)",
+          "label": "Side Mirror (R)",
+          "status": "OK"
+        },
+        {
+          "id": "camera_front",
+          "name": "Camera Front",
+          "label": "Camera - Front",
+          "status": "OK"
+        },
+        {
+          "id": "spare_tyre",
+          "name": "Spare Tyre",
+          "label": "Spare Tyre",
+          "status": "OK"
+        },
+        {
+          "id": "wheel",
+          "name": "Wheel",
+          "label": "Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "jack",
+          "name": "Jack",
+          "label": "Jack",
+          "status": "OK"
+        },
+        {
+          "id": "battery",
+          "name": "Battery",
+          "label": "Battery",
+          "status": "OK"
+        },
+        {
+          "id": "ac_knob",
+          "name": "A/C Knob",
+          "label": "A/C Knob",
+          "status": "OK"
+        },
+        {
+          "id": "tool_kit",
+          "name": "Tool Kit",
+          "label": "Tool Kit",
+          "status": "OK"
+        },
+        {
+          "id": "alloy_wheel",
+          "name": "Alloy Wheel",
+          "label": "Alloy Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "hub_caps",
+          "name": "Hub Caps",
+          "label": "Hub Caps",
+          "status": "OK"
+        }
+      ],
+      "hasDamage": false,
+      "damages": [],
+      "photos": [
+        {
+          "id": "p-201",
+          "type": "front",
+          "label": "Front View",
+          "dataUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:40:00Z"
+        },
+        {
+          "id": "p-202",
+          "type": "rear",
+          "label": "Rear View",
+          "dataUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:41:00Z"
+        },
+        {
+          "id": "p-203",
+          "type": "chassis",
+          "label": "Chassis No.",
+          "dataUrl": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:42:00Z"
+        }
+      ],
+      "status": "Pending Approval",
+      "isLocked": false,
+      "createdBy": {
+        "id": "user-sec-01",
+        "name": "Security01",
+        "role": "Security Officer",
+        "badgeNo": "HIPG-SEC-104"
+      },
+      "deviceId": "HIPG-TAB-RO-04",
+      "createdAt": "2026-11-09T14:38:00Z",
+      "submittedAt": "2026-11-09T14:45:00Z",
+      "syncStatus": "synced"
+    },
+    {
+      "id": "tally-000786",
+      "referenceNo": "DTVS-2026-000786",
+      "vesselId": "vessel-gp-015",
+      "vesselName": "Grand Pioneer",
+      "voyageNo": "GP-015",
+      "docNo": "37538",
+      "vehicleNo": "WP-CAD-4412",
+      "chassisNo": "KMHE341CBLA772190",
+      "tagNo": "TAG-88912",
+      "agentName": "MOL",
+      "yardLocation": "Berth 07 (RoRo)",
+      "brandModel": "Hyundai Tucson 2.0 (Silver)",
+      "cargoType": "Vehicle (CBU)",
+      "checklist": [
+        {
+          "id": "monogram",
+          "name": "Monogram",
+          "label": "Monogram",
+          "status": "OK"
+        },
+        {
+          "id": "top_cap",
+          "name": "Top Cap",
+          "label": "Top Cap",
+          "status": "OK"
+        },
+        {
+          "id": "side_mirror_left",
+          "name": "Side Mirror (Left)",
+          "label": "Side Mirror (L)",
+          "status": "Damaged"
+        },
+        {
+          "id": "side_mirror_right",
+          "name": "Side Mirror (Right)",
+          "label": "Side Mirror (R)",
+          "status": "OK"
+        },
+        {
+          "id": "camera_front",
+          "name": "Camera Front",
+          "label": "Camera - Front",
+          "status": "OK"
+        },
+        {
+          "id": "spare_tyre",
+          "name": "Spare Tyre",
+          "label": "Spare Tyre",
+          "status": "OK"
+        },
+        {
+          "id": "wheel",
+          "name": "Wheel",
+          "label": "Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "jack",
+          "name": "Jack",
+          "label": "Jack",
+          "status": "OK"
+        },
+        {
+          "id": "battery",
+          "name": "Battery",
+          "label": "Battery",
+          "status": "OK"
+        },
+        {
+          "id": "ac_knob",
+          "name": "A/C Knob",
+          "label": "A/C Knob",
+          "status": "OK"
+        },
+        {
+          "id": "tool_kit",
+          "name": "Tool Kit",
+          "label": "Tool Kit",
+          "status": "OK"
+        },
+        {
+          "id": "alloy_wheel",
+          "name": "Alloy Wheel",
+          "label": "Alloy Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "hub_caps",
+          "name": "Hub Caps",
+          "label": "Hub Caps",
+          "status": "OK"
+        }
+      ],
+      "hasDamage": true,
+      "damages": [
+        {
+          "id": "dmg-3",
+          "category": "Bent",
+          "location": "Left Side Mirror Mount",
+          "severity": "Moderate",
+          "remarks": "Mirror housing cracked and bent inward during deck lashing removal"
+        }
+      ],
+      "photos": [
+        {
+          "id": "p-301",
+          "type": "front",
+          "label": "Front View",
+          "dataUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:50:00Z"
+        },
+        {
+          "id": "p-302",
+          "type": "rear",
+          "label": "Rear View",
+          "dataUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T14:51:00Z"
+        }
+      ],
+      "status": "Pending Approval",
+      "isLocked": false,
+      "createdBy": {
+        "id": "user-sec-01",
+        "name": "Security01",
+        "role": "Security Officer",
+        "badgeNo": "HIPG-SEC-104"
+      },
+      "deviceId": "HIPG-TAB-RO-04",
+      "createdAt": "2026-11-09T14:48:00Z",
+      "submittedAt": "2026-11-09T14:55:00Z",
+      "syncStatus": "synced"
+    },
+    {
+      "id": "tally-000787",
+      "referenceNo": "DTVS-2026-000787",
+      "vesselId": "vessel-gp-015",
+      "vesselName": "Grand Pioneer",
+      "voyageNo": "GP-015",
+      "docNo": "37538",
+      "vehicleNo": "CBA-5510",
+      "chassisNo": "JH4KB26708C001298",
+      "tagNo": "TAG-88913",
+      "agentName": "MOL",
+      "yardLocation": "Yard 1A (Vehicle Staging)",
+      "brandModel": "Acura MDX AWD (Graphite)",
+      "cargoType": "Vehicle (CBU)",
+      "checklist": [
+        {
+          "id": "monogram",
+          "name": "Monogram",
+          "label": "Monogram",
+          "status": "OK"
+        },
+        {
+          "id": "top_cap",
+          "name": "Top Cap",
+          "label": "Top Cap",
+          "status": "OK"
+        },
+        {
+          "id": "side_mirror_left",
+          "name": "Side Mirror (Left)",
+          "label": "Side Mirror (L)",
+          "status": "OK"
+        },
+        {
+          "id": "side_mirror_right",
+          "name": "Side Mirror (Right)",
+          "label": "Side Mirror (R)",
+          "status": "OK"
+        },
+        {
+          "id": "camera_front",
+          "name": "Camera Front",
+          "label": "Camera - Front",
+          "status": "OK"
+        },
+        {
+          "id": "spare_tyre",
+          "name": "Spare Tyre",
+          "label": "Spare Tyre",
+          "status": "OK"
+        },
+        {
+          "id": "wheel",
+          "name": "Wheel",
+          "label": "Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "jack",
+          "name": "Jack",
+          "label": "Jack",
+          "status": "OK"
+        },
+        {
+          "id": "battery",
+          "name": "Battery",
+          "label": "Battery",
+          "status": "OK"
+        },
+        {
+          "id": "ac_knob",
+          "name": "A/C Knob",
+          "label": "A/C Knob",
+          "status": "OK"
+        },
+        {
+          "id": "tool_kit",
+          "name": "Tool Kit",
+          "label": "Tool Kit",
+          "status": "OK"
+        },
+        {
+          "id": "alloy_wheel",
+          "name": "Alloy Wheel",
+          "label": "Alloy Wheel",
+          "status": "OK"
+        },
+        {
+          "id": "hub_caps",
+          "name": "Hub Caps",
+          "label": "Hub Caps",
+          "status": "OK"
+        }
+      ],
+      "hasDamage": true,
+      "damages": [
+        {
+          "id": "dmg-4",
+          "category": "Dented",
+          "location": "Rear Left Quarter Panel",
+          "severity": "Severe",
+          "remarks": "Deep dent 25cm along rear fender bodyline, needs surveyor inspection"
+        }
+      ],
+      "photos": [
+        {
+          "id": "p-401",
+          "type": "front",
+          "label": "Front View",
+          "dataUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T13:10:00Z"
+        },
+        {
+          "id": "p-402",
+          "type": "rear",
+          "label": "Rear View",
+          "dataUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T13:11:00Z"
+        }
+      ],
+      "status": "Rejected",
+      "isLocked": false,
+      "createdBy": {
+        "id": "user-sec-01",
+        "name": "Security01",
+        "role": "Security Officer",
+        "badgeNo": "HIPG-SEC-104"
+      },
+      "deviceId": "HIPG-TAB-RO-04",
+      "createdAt": "2026-11-09T13:00:00Z",
+      "submittedAt": "2026-11-09T13:15:00Z",
+      "rejectionDetails": {
+        "rejectedBy": "user-sup-01",
+        "supervisorName": "Supervisor01",
+        "rejectedAt": "2026-11-09T13:40:00Z",
+        "reason": "Missing clear close-up damage photo of rear quarter panel before insurance sign-off."
+      },
+      "syncStatus": "synced"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1794247197390-xyqac",
+      "timestamp": "2026-11-09T17:59:57.390Z",
+      "userId": "gate-scanner",
+      "userName": "Gate Security Officer",
+      "userRole": "Security Viewer",
+      "action": "QR_VERIFIED",
+      "recordId": "tally-1794240058732",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Scanned & verified vehicle TEST-9988 at Terminal Gate",
+      "deviceId": "HIPG-GATE-TERM-03"
+    },
+    {
+      "id": "log-1794247197376-3mwir",
+      "timestamp": "2026-11-09T17:59:57.376Z",
+      "userId": "gate-scanner",
+      "userName": "Gate Security Officer",
+      "userRole": "Security Viewer",
+      "action": "QR_VERIFIED",
+      "recordId": "tally-1794240058732",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Scanned & verified vehicle TEST-9988 at Terminal Gate",
+      "deviceId": "HIPG-GATE-TERM-03"
+    },
+    {
+      "id": "log-1794240066079-n7qrq",
+      "timestamp": "2026-11-09T16:01:06.079Z",
+      "userId": "user-sup-01",
+      "userName": "Supervisor01",
+      "userRole": "Supervisor",
+      "action": "TALLY_APPROVED",
+      "recordId": "tally-1794240058732",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Approved and locked vehicle tally for TEST-9988 (DOC: 37538)",
+      "deviceId": "SUPERVISOR-CONSOLE"
+    },
+    {
+      "id": "log-1794240058735-r4orj",
+      "timestamp": "2026-11-09T16:00:58.735Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-1794240058732",
+      "referenceNo": "DTVS-2026-000788",
+      "details": "Tally submitted for vehicle TEST-9988 (TESTCHASSIS998877) on vessel Grand Pioneer",
+      "deviceId": "HIPG-TERMINAL-01"
+    },
+    {
+      "id": "log-001",
+      "timestamp": "2026-11-09T14:36:00Z",
+      "userId": "user-sup-01",
+      "userName": "Supervisor01",
+      "userRole": "Supervisor",
+      "action": "TALLY_APPROVED",
+      "recordId": "tally-000784",
+      "referenceNo": "DTVS-2026-000784",
+      "details": "Approved and locked vehicle tally for ABC-1234 (Chassis: NNAAL5566577876543)",
+      "deviceId": "HIPG-DESK-OPS-02"
+    },
+    {
+      "id": "log-002",
+      "timestamp": "2026-11-09T14:25:00Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "tally-000784",
+      "referenceNo": "DTVS-2026-000784",
+      "details": "Submitted final tally inspection with 4 photos and 1 damage entry",
+      "deviceId": "HIPG-TAB-RO-04"
+    },
+    {
+      "id": "log-003",
+      "timestamp": "2026-11-09T14:22:00Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_UPDATED",
+      "recordId": "tally-000784",
+      "referenceNo": "DTVS-2026-000784",
+      "details": "Photo evidence uploaded: Front, Rear, Chassis plate, Damage spot",
+      "deviceId": "HIPG-TAB-RO-04"
+    },
+    {
+      "id": "log-004",
+      "timestamp": "2026-11-09T14:15:00Z",
+      "userId": "user-sec-01",
+      "userName": "Security01",
+      "userRole": "Security Officer",
+      "action": "TALLY_CREATED",
+      "recordId": "tally-000784",
+      "referenceNo": "DTVS-2026-000784",
+      "details": "Initial vehicle record created for Grand Pioneer GP-015",
+      "deviceId": "HIPG-TAB-RO-04"
+    },
+    {
+      "id": "log-005",
+      "timestamp": "2026-11-09T13:40:00Z",
+      "userId": "user-sup-01",
+      "userName": "Supervisor01",
+      "userRole": "Supervisor",
+      "action": "TALLY_REJECTED",
+      "recordId": "tally-000787",
+      "referenceNo": "DTVS-2026-000787",
+      "details": "Record rejected: Missing clear close-up damage photo of rear quarter panel",
+      "deviceId": "HIPG-DESK-OPS-02"
+    }
+  ],
+  "lastRefNumber": 787
+}

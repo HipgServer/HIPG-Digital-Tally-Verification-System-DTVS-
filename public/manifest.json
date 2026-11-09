@@ -1,0 +1,16 @@
+{
+  "name": "HIPG Digital Tally & Verification System",
+  "short_name": "HIPG DTVS",
+  "description": "Hambantota International Port Group RoRo Vessel Vehicle Tally & Verification System",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#08162A",
+  "theme_color": "#0B1F3A",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
