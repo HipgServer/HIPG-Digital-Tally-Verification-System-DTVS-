@@ -120,13 +120,13 @@
       "operationStartDate": "2026-11-09T08:00:00Z",
       "status": "In Progress",
       "totalManifestedVehicles": 245,
-      "dischargedCount": 5,
+      "dischargedCount": 6,
       "approvedCount": 1,
-      "pendingCount": 3,
+      "pendingCount": 4,
       "rejectedCount": 1,
       "notes": "RoRo auto carrier discharge in progress at Berth 07",
       "createdAt": "2026-11-08T06:30:00Z",
-      "updatedAt": "2026-11-09T18:20:21.333Z"
+      "updatedAt": "2026-11-09T19:26:42.563Z"
     },
     {
       "id": "vessel-ms-088",
@@ -171,6 +171,160 @@
     }
   ],
   "tallies": [
+    {
+      "id": "local-1794252402529",
+      "referenceNo": "DTVS-PENDING-2529",
+      "vesselId": "vessel-gp-015",
+      "vesselName": "Grand Pioneer",
+      "voyageNo": "GP-015",
+      "docNo": "37538",
+      "vehicleNo": "ABC-1234",
+      "chassisNo": "NNAAL5566577876543",
+      "tagNo": "TAG-88915",
+      "agentName": "MOL",
+      "yardLocation": "Berth 07 (RoRo)",
+      "brandModel": "Toyota Harrier (Pearl White)",
+      "cargoType": "Vehicle (CBU)",
+      "driverName": "K. Perera",
+      "checklist": [
+        {
+          "id": "monogram",
+          "name": "Monogram",
+          "label": "Monogram",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "top_cap",
+          "name": "Top Cap",
+          "label": "Top Cap",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "side_mirror_left",
+          "name": "Side Mirror (Left)",
+          "label": "Side Mirror (L)",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "side_mirror_right",
+          "name": "Side Mirror (Right)",
+          "label": "Side Mirror (R)",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "camera_front",
+          "name": "Camera Front",
+          "label": "Camera - Front",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "spare_tyre",
+          "name": "Spare Tyre",
+          "label": "Spare Tyre",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "wheel",
+          "name": "Wheel",
+          "label": "Wheel",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "jack",
+          "name": "Jack",
+          "label": "Jack",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "battery",
+          "name": "Battery",
+          "label": "Battery",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "ac_knob",
+          "name": "A/C Knob",
+          "label": "A/C Knob",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "tool_kit",
+          "name": "Tool Kit",
+          "label": "Tool Kit",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "alloy_wheel",
+          "name": "Alloy Wheel",
+          "label": "Alloy Wheel",
+          "status": "OK",
+          "notes": ""
+        },
+        {
+          "id": "hub_caps",
+          "name": "Hub Caps",
+          "label": "Hub Caps",
+          "status": "OK",
+          "notes": ""
+        }
+      ],
+      "hasDamage": false,
+      "damages": [],
+      "photos": [
+        {
+          "id": "photo-front",
+          "type": "front",
+          "label": "Front View",
+          "dataUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T19:26:35.323Z"
+        },
+        {
+          "id": "photo-rear",
+          "type": "rear",
+          "label": "Rear View",
+          "dataUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T19:26:35.323Z"
+        },
+        {
+          "id": "photo-chassis",
+          "type": "chassis",
+          "label": "Chassis No.",
+          "dataUrl": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T19:26:35.323Z"
+        },
+        {
+          "id": "photo-damage",
+          "type": "damage",
+          "label": "Damage (if Any)",
+          "dataUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+          "uploadedAt": "2026-11-09T19:26:35.323Z"
+        }
+      ],
+      "status": "Pending Approval",
+      "isLocked": false,
+      "createdBy": {
+        "id": "user-sec-01",
+        "name": "Operations User",
+        "role": "Security Officer",
+        "badgeNo": "HIPG-SEC-104"
+      },
+      "deviceId": "HIPG-DEV-HZX5-6390",
+      "createdAt": "2026-11-09T19:26:42.529Z",
+      "submittedAt": "2026-11-09T19:26:42.529Z",
+      "qrCodeDataUrl": "data:image/png;base64,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",
+      "syncStatus": "synced"
+    },
     {
       "id": "tally-1794248421332",
       "referenceNo": "DTVS-2026-000788",
@@ -788,6 +942,30 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-1794252404964-70aj8",
+      "timestamp": "2026-11-09T19:26:44.964Z",
+      "userId": "gate-scanner",
+      "userName": "Gate Security Officer",
+      "userRole": "Security Viewer",
+      "action": "QR_VERIFIED",
+      "recordId": "local-1794252402529",
+      "referenceNo": "DTVS-PENDING-2529",
+      "details": "Scanned & verified vehicle ABC-1234 at Terminal Gate",
+      "deviceId": "HIPG-GATE-TERM-03"
+    },
+    {
+      "id": "log-1794252402564-k124o",
+      "timestamp": "2026-11-09T19:26:42.564Z",
+      "userId": "user-gat-01",
+      "userName": "Gate Security Viewer",
+      "userRole": "Security Viewer",
+      "action": "TALLY_SUBMITTED",
+      "recordId": "local-1794252402529",
+      "referenceNo": "DTVS-PENDING-2529",
+      "details": "Tally submitted for vehicle ABC-1234 (NNAAL5566577876543) on vessel Grand Pioneer",
+      "deviceId": "HIPG-DEV-HZX5-6390"
+    },
     {
       "id": "log-1794251104652-86nvw",
       "timestamp": "2026-11-09T19:05:04.652Z",
