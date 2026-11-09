@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # HIPG Digital Tally & Verification System Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hipg-dtvs-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/hipg_dtvs
+      - NEXT_PUBLIC_BASE_URL=http://localhost:3000
+      - JWT_SECRET=hipg-dtvs-super-secure-production-secret-2026
+    depends_on:
+      - mongo
+    networks:
+      - hipg-network
+
+  # MongoDB Production Database
+  mongo:
+    image: mongo:7.0
+    container_name: hipg-dtvs-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - hipg-network
+
+  # Mongo Express - Visual Database Management Web UI
+  mongo-express:
+    image: mongo-express:latest
+    container_name: hipg-dtvs-mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_BASICAUTH=false
+    depends_on:
+      - mongo
+    networks:
+      - hipg-network
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  hipg-network:
+    driver: bridge
