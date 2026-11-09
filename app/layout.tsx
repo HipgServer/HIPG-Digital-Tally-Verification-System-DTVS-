@@ -8,10 +8,18 @@ export const metadata: Metadata = {
   description:
     'Hambantota International Port Group (HIPG) Enterprise Vehicle Tally, Inspection, and Verification System.',
   manifest: '/manifest.json',
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'HIPG DTVS',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
   },
 };
 
