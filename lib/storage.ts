@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import QRCode from 'qrcode';
 import {
   User,
@@ -29,18 +30,44 @@ interface DatabaseData {
   lastRefNumber: number;
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data');
-const DATA_FILE = path.join(DATA_DIR, 'database.json');
+// In Vercel serverless environment, local filesystem is read-only except /tmp
+const BUNDLED_DATA_FILE = path.join(process.cwd(), 'data', 'database.json');
+const WRITABLE_DATA_DIR = process.env.VERCEL ? os.tmpdir() : path.join(process.cwd(), 'data');
+const DATA_FILE = path.join(WRITABLE_DATA_DIR, 'database.json');
+
+// In-memory runtime cache for serverless execution
+let memoryCache: DatabaseData | null = null;
 
 function ensureDataDirectory() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  try {
+    if (!fs.existsSync(WRITABLE_DATA_DIR)) {
+      fs.mkdirSync(WRITABLE_DATA_DIR, { recursive: true });
+    }
+  } catch (e) {
+    // safe fallback
   }
 }
 
 function loadDataFromFile(): DatabaseData {
+  if (memoryCache) return memoryCache;
+
   ensureDataDirectory();
+
+  // If DATA_FILE doesn't exist in writable dir (e.g. /tmp on Vercel), copy from bundled seed file
   if (!fs.existsSync(DATA_FILE)) {
+    if (fs.existsSync(BUNDLED_DATA_FILE)) {
+      try {
+        const bundledContent = fs.readFileSync(BUNDLED_DATA_FILE, 'utf-8');
+        try {
+          fs.writeFileSync(DATA_FILE, bundledContent, 'utf-8');
+        } catch (e) {}
+        memoryCache = JSON.parse(bundledContent);
+        return memoryCache!;
+      } catch (e) {
+        // Fallback to initial seeds
+      }
+    }
+
     const initialData: DatabaseData = {
       users: SEED_USERS,
       vessels: SEED_VESSELS,
@@ -48,13 +75,17 @@ function loadDataFromFile(): DatabaseData {
       auditLogs: SEED_AUDIT_LOGS,
       lastRefNumber: 787,
     };
-    fs.writeFileSync(DATA_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(DATA_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
+    } catch (e) {}
+    memoryCache = initialData;
     return initialData;
   }
 
   try {
     const content = fs.readFileSync(DATA_FILE, 'utf-8');
-    return JSON.parse(content);
+    memoryCache = JSON.parse(content);
+    return memoryCache!;
   } catch (err) {
     console.error('Error reading database.json, reinitializing with seed data:', err);
     const initialData: DatabaseData = {
@@ -64,14 +95,22 @@ function loadDataFromFile(): DatabaseData {
       auditLogs: SEED_AUDIT_LOGS,
       lastRefNumber: 787,
     };
-    fs.writeFileSync(DATA_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(DATA_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
+    } catch (e) {}
+    memoryCache = initialData;
     return initialData;
   }
 }
 
 function saveDataToFile(data: DatabaseData): void {
-  ensureDataDirectory();
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+  memoryCache = data;
+  try {
+    ensureDataDirectory();
+    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+  } catch (e) {
+    // In-memory cache protects runtime in case of strict serverless filesystem boundaries
+  }
 }
 
 // Generate QR Code data URL for verification
